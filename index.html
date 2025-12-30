@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>10215 수학꿈끼 – 좌표평면 게임 원리</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="웹사이트, html" />
+  <meta name="description" content="10215 수학꿈끼2" />
+  <meta name="author" content="승연" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+<h2>10215우승연 수학꿈끼 : 좌표평면 활용한 게임원리</h2>
+
+<!-- 🔹 메인 좌우 레이아웃 -->
+<div class="main-layout">
+
+  <!-- 🔹 통합 컨트롤 패널 (딱 한 번!) -->
+  <div class="controls unified-panel">
+
+    <!-- 캐릭터 조정 -->
+    <div class="panel-section">
+      <div class="panel-title">캐릭터 조정</div>
+      <div class="numeric-controls">
+        <label>X:
+          <input type="number" id="xInput" value="0">
+        </label>
+        <label>Y:
+          <input type="number" id="yInput" value="0">
+        </label>
+        <button id="moveBtn">점 위치 적용</button>
+        <div class="coord-label">
+          현재 점: <span id="coordLabel">(0, 0)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카메라 조정 -->
+    <div class="panel-section">
+      <div class="panel-title">카메라 조정</div>
+      <div class="camera-controls">
+        <label>cam X:
+          <input type="number" id="camXInput" value="5">
+        </label>
+        <label>cam Y:
+          <input type="number" id="camYInput" value="0">
+        </label>
+        <button id="moveCamBtn">카메라 위치 적용</button>
+        <div class="coord-label">
+          카메라: <span id="camCoordLabel">(5, 0)</span>
+        </div>
+
+        <div class="symmetry-wrapper">
+          <div class="symmetry-title">대칭 이동</div>
+          <div class="sym-buttons">
+            <button class="sym-btn" data-type="diag">y = x 대칭</button>
+            <button class="sym-btn" data-type="yaxis">y축 대칭</button>
+            <button class="sym-btn" data-type="xaxis">x축 대칭</button>
+            <button class="sym-btn" data-type="origin">원점 대칭</button>
+          </div>
+
+          <div class="custom-line">
+            <div class="custom-line-title">사용자 정의 직선 대칭</div>
+            <div class="custom-line-row">
+            <span>ax + by + c = 0</span>
+            </div>
+            <label>a <input type="number" id="lineA" value="1"></label>
+            <label>b <input type="number" id="lineB" value="-1"></label>
+            <label>c <input type="number" id="lineC" value="0"></label>
+            <button id="customSymBtn">이 직선에 대해 대칭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 세팅 -->
+    <div class="panel-section">
+      <div class="panel-title">세팅값</div>
+      <div class="settings-panel">
+        <button id="mapPlaneBtn">맵 좌표평면: ON</button>
+        <button id="cameraPlaneBtn">카메라 좌표평면: OFF</button>
+      </div>
+    </div>
+
+    <!-- 조이스틱 -->
+    <div class="panel-section">
+      <div class="panel-title">조이스틱</div>
+      <div class="joystick-wrapper">
+        <div class="joystick">
+          <button class="joy-btn" data-dir="up">▲</button>
+          <div class="joy-middle-row">
+            <button class="joy-btn" data-dir="left">◀</button>
+            <div class="joy-center"></div>
+            <button class="joy-btn" data-dir="right">▶</button>
+          </div>
+          <button class="joy-btn" data-dir="down">▼</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔹 좌표평면 (딱 하나만!) -->
+  <canvas id="plane" width="600" height="450"></canvas>
+
+</div>
+
+  <script src="index.js"></script>
+</body>
+</html>

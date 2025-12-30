@@ -1,0 +1,341 @@
+/* =========================
+   기본 페이지 스타일
+========================= */
+body {
+  font-family: "Noto Sans KR", system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+  margin: 0;
+  padding: 16px;
+  overscroll-behavior: none;
+
+}
+
+.app {
+  max-width: 1200px;   /* ⭐ 핵심 */
+  margin: 0 auto;      /* 가운데 정렬 */
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 13px;
+  color: #4b5563;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* =========================
+   통합 컨트롤 패널
+========================= */
+.panel {
+  width: clamp(260px, 28vw, 340px);
+  flex-shrink: 0;
+}
+
+.unified-panel {
+  width: 340px;
+  margin: 0 auto 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* 섹션 단위 */
+.panel-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* 섹션 제목 */
+.panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   내부 컨트롤 공통 정리
+========================= */
+.unified-panel
+.numeric-controls,
+.unified-panel
+.camera-controls,
+.unified-panel
+.settings-panel,
+.unified-panel
+.joystick-wrapper {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* 제목 중복 제거 */
+.controls-title {
+  display: none;
+}
+
+/* =========================
+   입력 필드
+========================= */
+label {
+  font-size: 13px;
+  color: #374151;
+  margin-right: 6px;
+}
+
+
+
+/* =========================
+   버튼 공통
+========================= */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* 주요 버튼 */
+#moveBtn,
+#moveCamBtn {
+  margin-left: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(59,130,246,0.35);
+  transition: 0.15s;
+}
+
+#moveBtn:hover,
+#moveCamBtn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* 세팅 버튼 */
+.settings-panel button {
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #374151;
+  font-weight: 600;
+  transition: 0.15s;
+}
+
+.settings-panel button.on {
+  background: #e0ecff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+/* =========================
+   대칭 관련
+========================= */
+.symmetry-wrapper {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.symmetry-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.sym-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.sym-btn {
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+}
+
+/* =========================
+   조이스틱
+========================= */
+.joystick-wrapper {
+  text-align: center;
+}
+
+.joystick {
+  width: 120px;
+  height: 120px;
+  margin: 6px auto;
+  border-radius: 16px;
+  background: radial-gradient(circle at 30% 30%, #f9fafb, #d1d5db);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.joy-middle-row {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.joy-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 13px;
+}
+
+.joy-center {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+
+.joystick-hint {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* 사용자 정의 직선 대칭 버튼 */
+#customSymBtn {
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #10b981;   /* 초록색 */
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(16,185,129,0.35);
+  transition: 0.15s;
+}
+
+#customSymBtn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   메인 좌우 레이아웃
+========================= */
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* 캔버스 오른쪽 고정 */
+.main-layout canvas {
+  margin: 0;
+  
+}
+
+.custom-line-title {
+  font-size: 12px;        /* panel-title보다 작게 */
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.custom-line {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.custom-line label {
+  font-size: 12px;
+  margin-right: 6px;
+}
+
+#customSymBtn {
+  margin-top: 4px;
+  padding: 3px 8px;
+  font-size: 11.5px;
+  border-radius: 6px;
+}
+
+/* 좌표 표시 텍스트 */
+.coord-label {
+  margin-top: 4px;
+  font-size: 11.5px;
+  color: #6b7280;
+}
+
+.coord-label span {
+  font-weight: 600;
+  font-size: 11.5px;
+  color: #1d4ed8;
+}
+
+
+.custom-line-row {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.custom-line-row span {
+  font-style: italic;
+}
+
+.graph-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모든 숫자 인풋 통일 */
+input[type="number"] {
+  width: 70px;
+  padding: 3px 4px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+/* =========================
+   캔버스
+========================= */
+canvas {
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(180deg, #ffffff 0%,#fdfefe 50%,  #f8fafc 100% );
+  border-radius : 15px ;
+  border: 1px solid #e5e7eb;
+  
+}
